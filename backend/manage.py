@@ -17,8 +17,8 @@ def main():
         ) from exc
     execute_from_command_line(sys.argv)
     from users.models import User
-    if not User.objects.filter(email='admin@gmail.com').exists():
-        User.objects.create_superuser('admin', 'admin@gmail.com', '0000')
+    if not User.objects.filter(telegram_id=1).exists():
+        User.objects.create_superuser(telegram_id=1, password='0000')
 
 if __name__ == '__main__':
     main()
